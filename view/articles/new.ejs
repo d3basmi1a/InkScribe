@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>INKSCRIBE</title>
+    <style>
+        body {
+                background-color: #ffffff;
+                font-family: 'Arial', sans-serif;
+                padding-top: 100px; 
+                background-image: url('https://fotoomnia.com/thumbnails/720/f046a75bec4c171ddc497e254113e1e2.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">INKSCRIBE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="../articles/show.ejs">ARTICLES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles/new">WRITE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1 class="mb-3" style="color: white;">Create New Article</h1>
+        <form action="/articles" method="POST">
+            <%- include('form_field') %>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INKSCRIBE - Edit Article</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            padding-top: 100px; 
+            background-image: url('https://fotoomnia.com/thumbnails/720/f046a75bec4c171ddc497e254113e1e2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">INKSCRIBE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles/show">ARTICLES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles/new">WRITE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="color: white;" class="mb-4">Edit Article</h1>
+        <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+            <div class="mb-3">
+                <label for="title" style="color: white;" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="<%= article.title %>"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="description" style="color: white;" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3"><%= article.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="markdown" style="color: white;" class="form-label">Markdown Content</label>
+                <textarea class="form-control" id="markdown" name="markdown" rows="10"
+                    required><%= article.markdown %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Article</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-6D1G+hazXL8+G4skvgG+A0B6cXiSO+9W28s0FbF36lG8gjCuwU1mlM6J/JMW+r5G"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-rhWVzUV8H3MnnKIX2xCPJvwrj6Qzixj6JojxKHVw6EdtbE0otX7/ncGngPDvLt5s"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
